@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>AI Image Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>AI Image Generator</h1>
+        <p>Generate stunning images using AI-powered models.</p>
+      </header>
+
+      <main>
+        <section class="form-section">
+          <form id="image-generator-form">
+            <div class="input-group">
+              <label for="projectId">Project ID</label>
+              <input
+                type="text"
+                id="projectId"
+                name="projectId"
+                placeholder="Google Cloud Project ID"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="location">Select Region</label>
+              <select id="location" name="location" required>
+                <option value="" disabled selected>Select Region</option>
+                <option value="us-central1">us-central1</option>
+                <option value="europe-west1">europe-west1</option>
+                <option value="asia-east1">asia-east1</option>
+                <option value="southamerica-east1">southamerica-east1</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="prompt">Image Prompt</label>
+              <textarea
+                id="prompt"
+                name="prompt"
+                rows="3"
+                placeholder="Describe the image you want to generate..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="input-group">
+              <label for="num_images">Number of Images</label>
+              <input
+                type="number"
+                id="num_images"
+                name="num_images"
+                min="1"
+                max="5"
+                value="1"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="image_size">Select Image Size</label>
+              <select id="image_size" name="image_size" required>
+                <option value="512x512">512x512</option>
+                <option value="1024x1024">1024x1024</option>
+                <option value="2048x2048">2048x2048</option>
+              </select>
+            </div>
+
+            <div class="button-group">
+              <button type="submit" class="btn-generate">
+                Generate Images
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section id="error-message" class="error-message" style="display: none">
+          <p>An error occurred while generating images. Please try again.</p>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 Pratham Kuril</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
