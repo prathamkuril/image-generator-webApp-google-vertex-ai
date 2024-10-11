@@ -160,3 +160,52 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+
+# Service Account Key (Sensitive information, never commit this)
+account-file.json
+
+# Google Cloud Credentials
+GOOGLE_APPLICATION_CREDENTIALS.json
+
+# Environment files
+.env
+
+# Node Modules and dependencies 
+node_modules/
+npm-debug.log*
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+
+# Local virtual environment
+venv/
+
+# Caches
+.cache/
+.DS_Store
+
+# IDE-specific files
+.vscode/
+.idea/
+*.iml
+
+# OS generated files (Windows, macOS)
+Thumbs.db
+.DS_Store
+
+# Python packaging files
+build/
+dist/
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Generated images and output files (
+static/images/generated_image_*.jpeg
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+.nox/
