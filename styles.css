@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -125,6 +125,13 @@ textarea {
   max-width: 100%;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Display image metadata */
+#images-container p {
+  color: #AAAAAA;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 /* Error Message */
