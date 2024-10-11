@@ -2,10 +2,11 @@ document.getElementById('image-generator-form').addEventListener('submit', funct
     event.preventDefault();
     const formData = new FormData(this);
   
-    fetch('https://your-cloud-run-url.com/generate-image', {
-      method: 'POST',
-      body: formData
-    })
+    fetch('https://ai-image-app-67890-ew.s9a.run.app/generate-image', {
+        method: 'POST',
+        body: formData
+      })
+      
     .then(response => response.json())
     .then(data => {
       const errorMessage = document.getElementById('error-message');
@@ -18,10 +19,15 @@ document.getElementById('image-generator-form').addEventListener('submit', funct
         const imagesContainer = document.getElementById('images-container');
         imagesContainer.innerHTML = ''; // Clear existing images
   
-        data.image_data_list.forEach(base64Image => {
+        data.image_data_list.forEach(imageData => {
           const img = document.createElement('img');
-          img.src = base64Image;
+          img.src = imageData.image;
           imagesContainer.appendChild(img);
+  
+          // Display image generation details (size, generation time, etc.)
+          const imgDetails = document.createElement('p');
+          imgDetails.textContent = `Generated at: ${imageData.generated_at}, Size: ${imageData.size}, Time: ${imageData.generation_time} seconds`;
+          imagesContainer.appendChild(imgDetails);
         });
       }
     })
